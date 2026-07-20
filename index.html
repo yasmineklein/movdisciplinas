@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Cobrança Retroativa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="calc-header">
+            <h2 class="calc-title">Calculadora de Cobrança Retroativa - Inclusão de Disciplina</h2>
+        <p class="calc-subtitle">
+            <strong>Atenção:</strong> Use esta ferramenta para verificar se há necessidade de lançar crédito para o aluno após a movimentação de disciplinas.
+        </p>
+        
+        </div>
+
+        <div class="calc-body">
+            <fieldset>
+                <legend> Movimentação de disciplinas</legend>
+                <div class="row-horizontal">
+                    <div class="input-group">
+                        <label for="valorDisciplina">Valor da disciplina (R$):</label>
+                        <input type="text" id="valorDisciplina" placeholder="Ex: 250,00">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="qtdNovas">Qtd. de novas disciplinas incluídas:</label>
+                        <input type="text" id="qtdNovas" placeholder="Ex: 1" min="1">
+                    </div>
+
+                </div>
+            </fieldset>    
+
+            <fieldset>
+                <legend>Bolsas Aplicadas</legend>
+                <div class="row-horizontal">
+                    <div class="input-group">
+                        <label for="desconto1">Bolsa - Percentual 1 (%):</label>
+                        <input type="text" id="desconto1" placeholder="Ex: 40">
+                    </div>
+                
+                    <div class="input-group">
+                        <label for="desconto2">Bolsa - Percentual 2 (%):</label>
+                        <input type="text" id="desconto2" placeholder="Ex: 16,67">
+                        <small>Se não houver, deixe em branco.</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="desconto3">Bolsa - Percentual 3 (%):</label>
+                        <input type="text" id="desconto3" placeholder="Ex: 16,67">
+                        <small>Se não houver, deixe em branco.</small>
+                    </div>
+        
+                    <div class="input-group">
+                        <label for="desconto4">Bolsa - Percentual 4 (%):</label>
+                        <input type="text" id="desconto4" placeholder="Ex: 16,67">
+                        <small>Se não houver, deixe em branco.</small>
+                    </div>
+
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Boleto com o retroativo aplicado</legend>
+                <div class="row-horizontal">    
+                    <div class="input-group">
+                        <label for="boletoAtual">Qual boleto receberá a cobrança? (1 a 6):</label>
+                        <input type="text" id="boletoAtual" placeholder="Ex: 5" min="1" max="6">
+                    </div>
+
+                </div> 
+            </fieldset>      
+
+        <button onclick="calcularRetroativo()">Calcular Diferença</button>
+            
+            <fieldset>
+                <legend>Resumo da Cobrança</legend>
+                <div class="row-horizontal">   
+                    <div class="results-box" id="resultado" style="display: none;">
+            
+                        <p class="highlight"><strong>Cobrança Retroativa Líquida no boleto <span id="numBoleto"></span>:</strong> <span id="resultadoMensal"></span></p>
+                        <p><small id="resultadoProximos"></small></p>
+                    </div>
+                    
+                </div> 
+            </fieldset>  
+        </div>         
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
