@@ -8,21 +8,22 @@
 </head>
 <body>
 
-   <nav class="nav">
+    <!-- CABEÇALHO MENU -->
+    <nav class="nav">
         <div class="container nav-container">
             <ul class="nav-links">
                 <li><a href="https://yasmineklein.github.io/calculadorasbko/#menu">Menu</a></li>
             </ul>
-        </div>    
+        </div>  
     </nav>
 
+    <!-- CALCULADORA -->
     <div class="calculator-container">
         <div class="calc-header">
             <h2 class="calc-title">Calculadora de Cobrança Retroativa - Inclusão de Disciplina</h2>
-        <p class="calc-subtitle">
-            <strong>Atenção:</strong> Use esta ferramenta para verificar se há necessidade de lançar crédito para o aluno após a movimentação de disciplinas.
-        </p>
-        
+            <p class="calc-subtitle">
+                <strong>Atenção:</strong> Use esta ferramenta para verificar se há necessidade de lançar crédito para o aluno após a movimentação de disciplinas.
+            </p>
         </div>
 
         <div class="calc-body">
@@ -38,7 +39,6 @@
                         <label for="qtdNovas">Qtd. de novas disciplinas incluídas:</label>
                         <input type="text" id="qtdNovas" placeholder="Ex: 1" min="1">
                     </div>
-
                 </div>
             </fieldset>    
 
@@ -67,7 +67,6 @@
                         <input type="text" id="desconto4" placeholder="Ex: 16,67">
                         <small>Se não houver, deixe em branco.</small>
                     </div>
-
                 </div>
             </fieldset>
 
@@ -78,29 +77,27 @@
                         <label for="boletoAtual">Qual boleto receberá a cobrança? (1 a 6):</label>
                         <input type="text" id="boletoAtual" placeholder="Ex: 5" min="1" max="6">
                     </div>
-
                 </div> 
             </fieldset>      
 
-        <button onclick="calcularRetroativo()">Calcular Diferença</button>
+            <button onclick="calcularRetroativo()">Calcular Diferença</button>
             
             <fieldset>
                 <legend>Resumo da Cobrança</legend>
                 <div class="row-horizontal">   
                     <div class="results-box" id="resultado" style="display: none;">
-            
                         <p class="highlight"><strong>Cobrança Retroativa Líquida no boleto <span id="numBoleto"></span>:</strong> <span id="valorLiquidoMensal"></span></p>
                         <p><small id="resultadoProximos"></small></p>
                     </div>
-                    
                 </div> 
             </fieldset>  
         </div>         
     </div>
 
+    <!-- RODAPÉ -->
     <footer class="footer">
         <div class="container">
-         <p>&copy; 2026 YK.</p>
+            <p>&copy; 2026 YK.</p>
         </div>
     </footer>
 
