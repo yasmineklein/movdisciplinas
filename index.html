@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+   <nav class="nav">
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="https://yasmineklein.github.io/calculadorasbko/#menu">Menu</a></li>
+            </ul>
+        </div>    
+    </nav>
+
     <div class="calculator-container">
         <div class="calc-header">
             <h2 class="calc-title">Calculadora de Cobrança Retroativa - Inclusão de Disciplina</h2>
@@ -21,7 +30,7 @@
                 <legend> Movimentação de disciplinas</legend>
                 <div class="row-horizontal">
                     <div class="input-group">
-                        <label for="valorDisciplina">Valor da disciplina (R$):</label>
+                        <label for="valorDisciplina">Valor por disciplina (R$):</label>
                         <input type="text" id="valorDisciplina" placeholder="Ex: 250,00">
                     </div>
 
@@ -80,7 +89,7 @@
                 <div class="row-horizontal">   
                     <div class="results-box" id="resultado" style="display: none;">
             
-                        <p class="highlight"><strong>Cobrança Retroativa Líquida no boleto <span id="numBoleto"></span>:</strong> <span id="resultadoMensal"></span></p>
+                        <p class="highlight"><strong>Cobrança Retroativa Líquida no boleto <span id="numBoleto"></span>:</strong> <span id="valorLiquidoMensal"></span></p>
                         <p><small id="resultadoProximos"></small></p>
                     </div>
                     
@@ -88,6 +97,12 @@
             </fieldset>  
         </div>         
     </div>
+
+    <footer class="footer">
+        <div class="container">
+         <p>&copy; 2026 YK.</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
