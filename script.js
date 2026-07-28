@@ -1,4 +1,3 @@
-
 function lerValorSeguro(id) {
     const elemento = document.getElementById(id);
     if (!elemento || elemento.value.trim() === "") {
@@ -23,7 +22,6 @@ function calcularRetroativo() {
     const qtdNovas = lerInteiroSeguro('qtdNovas');
     const boletoAtual = lerInteiroSeguro('boletoAtual');
     
-    
     const desconto1 = lerValorSeguro('desconto1');
     const desconto2 = lerValorSeguro('desconto2');
     const desconto3 = lerValorSeguro('desconto3');
@@ -43,22 +41,24 @@ function calcularRetroativo() {
     valorLiquidoMensal = valorLiquidoMensal * (1 - (desconto3 / 100));
     valorLiquidoMensal = valorLiquidoMensal * (1 - (desconto4 / 100));
 
-    // 4. Cálculo do impacto retroativo no boleto atual (Meses passados + Mês atual)
-    const valorCobradoNesteBoleto = valorLiquidoMensal * boletoAtual;
+    // 4. Cálculo APENAS do impacto retroativo (Meses passados)
+    const mesesRetroativos = boletoAtual - 1;
+    const valorApenasRetroativo = valorLiquidoMensal * mesesRetroativos;
 
-    // 5. Formatação para Moeda Brasileira (BRL)
+    
     const formatarMoeda = (valor) => valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
-    // O id 'resultadoMensal' no HTML deve mostrar o ACUMULADO RETROATIVO (que é a variável valorCobradoNesteBoleto)
+    
     document.getElementById('numBoleto').innerText = boletoAtual;
-    document.getElementById('resultadoMensal').innerText = formatarMoeda(valorCobradoNesteBoleto);
+    
+    document.getElementById('valorLiquidoMensal').innerText = formatarMoeda(valorApenasRetroativo);
 
     let infoProximos = "";
+    
+    
     if (boletoAtual === 6) {
-        infoProximos = "Este é o último boleto do semestre. Não há cobranças futuras.";
-    } else {
-        infoProximos = `Para os boletos de ${boletoAtual + 1} até 6, o acréscimo será apenas a mensalidade normal de ${formatarMoeda(valorLiquidoMensal)}.`;
-    }
+        infoProximos = `Este é o último boleto do semestre. A mensalidade de ${formatarMoeda(valorLiquidoMensal)} já será cobrada nesta fatura.`;
+    } 
     
     document.getElementById('resultadoProximos').innerText = infoProximos;
     document.getElementById('resultado').style.display = "block";
